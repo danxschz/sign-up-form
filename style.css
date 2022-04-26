@@ -1,11 +1,7 @@
-/* Imports */
+/* Import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@font-face {
-  font-family: uniser;
-  src: url(UniserBold-vm27M.ttf);
-}
 
-/* General styles */
+/* General style rules */
 :root {
   box-sizing: border-box;
   font-size: 16px;
@@ -23,10 +19,10 @@ body {
 /* Left section */
 .left-section {
   width: 50vw;
-  background-image: url(mountains.jpg);
+  background-image: url(assets/mountains.jpg);
   background-color: rgb(249, 202, 202); /* Used if the image is unavailable */
   background-size: cover;
-  justify-content: center;
+  justify-content: flex-end;
   color: white;
 }
 
@@ -34,11 +30,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 12px;
+  margin-bottom: 350px;
   background: rgba(200, 106, 110, 0.7);
 }
 .logo img {
   width: 150px;
+  transition: transform 1s ease-in-out;
+}
+.logo img:hover {
+  transform: rotate(360deg) scale(1);
 }
 
 .left-section p {
@@ -48,51 +49,100 @@ body {
   color: white;
   text-decoration: underline;
 }
-
-/* Right section */
-.right-section {
-  justify-content: center;
-  color:rgba(200, 106, 110, 1);
+.left-section a:hover {
+  color: rgb(240, 240, 240);
 }
 
-.top {
+/* Right section (RS) */
+.right-section {
+  justify-content: center;
+  color:rgb(200, 106, 110);
+}
+
+.top, .form-container, .bottom {
   display: flex;
   flex-direction: column;
-  padding: 32px;
+  padding: 32px 48px;
+}
+
+/* RS Top */
+.top {
   font-size: 1.3rem;
   font-weight: 500;
   max-width: 72ch;
+  gap: 32px;
+}
+.top p {
+  margin: 0;
 }
 
+/* RS Form */
 .form-container {
-  background: rgb(243, 243, 243);
-  display: flex;
-  flex-direction: column;
-  padding: 32px;
-  gap: 16px;
+  background: rgb(248, 235, 233);
+  gap: 24px;
+  box-shadow: 0 4px 4px -4px rgb(167, 167, 167);
 }
-
 #sign-up-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
-
 .form-row{
   display: flex;
-  gap: 16px;
+  gap: 72px;
 }
-
 .form-item {
   display: flex;
   flex-direction: column;
 }
 
-.bottom {
-  padding: 32px;
-}
-
 h2 {
   margin: 0;
+}
+
+label {
+  font-size: 1.05rem;
+}
+
+input {
+  border-radius: 8px;
+  border: 1px solid rgb(211, 211, 211);
+  padding: 6px 12px;
+}
+input:focus {
+  outline-color: rgb(200, 106, 110);
+}
+input:invalid {
+  border-color: rgb(255, 133, 133);
+}
+
+/* RS Bottom */
+.bottom {
+  gap: 8px;
+}
+
+button {
+  background: rgb(200, 106, 110);
+  width: 200px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: rgb(190, 96, 100);
+}
+button:active {
+  background: rgb(180, 86, 90);
+}
+
+.bottom a {
+  color: rgb(200, 106, 110);
+  font-weight: 600;
+  text-decoration: none;
+}
+.bottom a:hover {
+  color:rgb(180, 86, 90)
 }
 
